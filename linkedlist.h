@@ -3,6 +3,9 @@
     Zack McKevitt
 */
 
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
@@ -13,6 +16,19 @@
 //    Single linked list
 //
 ////////////////////////////////////
+
+struct sll;
+struct sllnode;
+
+struct sll {
+    struct sllnode* head;
+    size_t size;
+};
+
+struct sllnode {
+    struct sllnode* next;
+    int val;
+};
 
 /*
     sll_create
@@ -142,6 +158,20 @@ void sll_print(struct sll* list) {
 //
 ////////////////////////////////////
 
+struct dll;
+struct dllnode;
+
+struct dll {
+    struct dllnode* head;
+    size_t size;
+};
+
+struct dllnode {
+    struct dllnode* next;
+    struct dllnode* prev;
+    int val;
+};
+
 struct dll dll_create() {
     struct dll newlist;
     newlist.head = NULL;
@@ -164,3 +194,5 @@ int dll_destroy(struct dll* list) {
 void dll_print(struct dll* list) {
     ;
 }
+
+#endif // LINKEDLIST_H
