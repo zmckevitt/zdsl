@@ -1,13 +1,14 @@
 /*
     Hash table implementation
     Zack McKevitt
+
+    TODO:
+    need hash table with better typing, perhaps implicit?
+    For now, just doing string prototype
+    Unions to emulate polymorphism?
+    https://stackoverflow.com/questions/10718150/c-unions-and-polymorphism
 */
 
-// TODO
-// need hash table with better typing, perhaps implicit?
-// For now, just doing string prototype
-// Unions to emulate polymorphism?
-// https://stackoverflow.com/questions/10718150/c-unions-and-polymorphism
 
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
@@ -52,6 +53,28 @@ uint32_t djb2_hash(const char* str) {
         hash = ((hash << 5) + hash) + c;
     return hash;
 }
+
+/*
+    ht_insert
+*/
+int ht_insert(struct ht* ht, uint32_t key, int value) {
+    return 0;
+}
+
+/*
+    ht_update
+*/
+int ht_update(struct ht* ht, uint32_t key, int value) {
+    return 0;
+}
+
+/*
+    ht_lookup
+*/
+int ht_lookup(struct ht* ht, uint32_t key, int value) {
+    return 0;
+}
+
 
 int ht_destroy(struct ht* hashtable) {
     int status = 0;

@@ -1,3 +1,14 @@
+/*
+    Hash table example
+    Zack McKevitt
+
+    Reads large file of random words.
+    Stores number of occurrences of each unique word
+    and writes this data to a file.
+
+    TODO:
+    All of it lol
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "../hashtable.h"

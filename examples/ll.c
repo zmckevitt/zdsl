@@ -1,3 +1,15 @@
+/*
+    Linked list example
+    Zack McKevitt
+
+    Test program for ll implementation.
+    Tests adding/deleting nodes.
+    Verify memory leaks with valgrind
+
+    TODO:
+    Implement error checking w status
+*/
+
 #include "../linkedlist.h"
 
 int main() {
@@ -6,20 +18,25 @@ int main() {
     struct sll list = sll_create();
     sll_print(&list);    
 
+    struct sllnode node;
+
     printf("Appending 10 to empty list...\n");
-    int status = sll_append(&list, 10);
+    node = sllnode(-1, 10);
+    int status = sll_append(&list, node);
     sll_print(&list);
 
     printf("Appending 20 to list...\n");
-    status = sll_append(&list, 20);
+    node = sllnode(-1, 20);
+    status = sll_append(&list, node);
     sll_print(&list);
 
     printf("Appending 30 to list...\n");
-    status = sll_append(&list, 30);
+    node = sllnode(-1, 30);
+    status = sll_append(&list, node);
     sll_print(&list);
 
     printf("Removing 30 from list...\n");
-    status = sll_delete(&list, 30);
+    status = sll_delete_by_value(&list, 30);
     sll_print(&list);
 
     printf("Destroying list...\n");
